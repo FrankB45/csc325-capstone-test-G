@@ -1,0 +1,1 @@
+fetch('/api/forecast').then(response => { if (!response.ok) throw new Error('Backend unavailable'); return response.json(); }).then(data => { document.querySelector('#forecast').textContent = `${data.place}: ${data.temperature}°C`; }).catch(() => { document.querySelector('#forecast').textContent = 'Forecast unavailable. Start the required Node backend.'; });
